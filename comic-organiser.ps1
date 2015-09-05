@@ -41,7 +41,7 @@ $DumpDirectory = "Y:\Comics\tO bE sORTED\"
 #                 `-' 
 
 # Get a list of all the directories in the  Sorted folder
-$Folders = Get-ChildItem  -Path "$SortDirectory" -Directory | Select -ExpandProperty FullName
+$Folders = Get-ChildItem  -Path "$SortDirectory" -Directory -recurse | Select -ExpandProperty FullName
 
 #For each Directory, search for comic book titles that matches, and move them there.
  ForEach($item in $Folders)
