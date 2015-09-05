@@ -49,8 +49,9 @@ $Folders = Get-ChildItem  -Path "$SortDirectory" -Directory -recurse | Select -E
 
       $temp = split-path $item -Leaf
     
-      $result =  Get-ChildItem -Path "$DumpDirectory" -File -filter *.cbr -include *$temp* -recurse | Move-Item -Destination $item -Force
-      $result
+      Get-ChildItem -Path "$DumpDirectory" -File -filter *.cbr -include *$temp* -recurse | Move-Item -Destination $item -Force
+      Get-ChildItem -Path "$DumpDirectory" -File -filter *.pdf -include *$temp* -recurse | Move-Item -Destination $item -Force
+      
     }
   
 #                                             _,_         xP
